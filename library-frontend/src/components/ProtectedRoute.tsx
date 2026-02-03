@@ -1,7 +1,8 @@
 import { Navigate } from "react-router-dom";
+import type { ReactNode } from "react";
 
 type Props = {
-  children: JSX.Element;
+  children: ReactNode;
 };
 
 export default function ProtectedRoute({ children }: Props) {
@@ -11,5 +12,5 @@ export default function ProtectedRoute({ children }: Props) {
     return <Navigate to="/" replace />;
   }
 
-  return children;
+  return <>{children}</>;
 }
